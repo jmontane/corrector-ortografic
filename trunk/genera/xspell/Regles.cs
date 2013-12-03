@@ -351,11 +351,12 @@ namespace xspell
                 zip.AddFile(dirFitxer + nomFitxer + ".aff", "dictionaries");
                 zip.AddFile(dirFitxer + @"..\..\OXT\" + "LICENSES-en.txt","");
                 zip.AddFile(dirFitxer + @"..\..\OXT\" + "LLICENCIES-ca.txt", "");
-                zip.AddStringAsFile(AdaptaFitxer(dirFitxer + @"..\..\OXT\" + "dictionaries.xcu", canvis, "\r\n", Encoding.UTF8), "dictionaries.xcu", "");
-                zip.AddStringAsFile(AdaptaFitxer(dirFitxer + @"..\..\OXT\" + "description.xml", canvis, "\r\n", Encoding.UTF8), "description.xml", "");
+                zip.AddStringAsFile(AdaptaFitxer(dirFitxer + @"..\..\OXT\" + nomFitxer + "\dictionaries.xcu", canvis, "\r\n", Encoding.UTF8), "dictionaries.xcu", "");
+                zip.AddStringAsFile(AdaptaFitxer(dirFitxer + @"..\..\OXT\" + nomFitxer + "\description.xml", canvis, "\r\n", Encoding.UTF8), "description.xml", "");
                 //zip.AddStringAsFile(AdaptaFitxer(dirFitxer + @"..\..\OXT\" + "release-notes_en.txt", canvia), "release-notes_en.txt", "");
                 //zip.AddStringAsFile(AdaptaFitxer(dirFitxer + @"..\..\OXT\" + "release-notes_ca.txt", canvia), "release-notes_ca.txt", "");
                 zip.AddFile(dirFitxer + @"..\..\OXT\META-INF\" + "manifest.xml", "META-INF/");
+                zip.AddFile(dirFitxer + @"..\..\OXT\" + "SC-logo.png","");                
                 zip.Save();
             }
             // genera update.xml, release-notes_en.txt i release-notes_ca.txt

@@ -119,7 +119,7 @@ namespace Genera
             List<VersioDiccionari> llista = new List<VersioDiccionari>();
             Marques nomesAvl = new Marques(false, "201", "202");    // particularitats de l'AVL sense acceptació general
 
-            // Cream la versió general
+            // Cream la versió general, nom del fitxer "catalan.oxt"
             VersioDiccionari versio = new VersioDiccionari("catalan", "Versió general", "general", new Marques(true).Menys(nomesAvl));
             versio.Extra("%AS_LNG%", "ca");
             versio.Extra("%AS_LANG%", "ca-general");
@@ -127,7 +127,7 @@ namespace Genera
             versio.Extra("%AS_LANGUAGE_CA%", "Català");
             llista.Add(versio);
 
-            // Cream la versió AVL
+            // Cream la versió AVL, nom del fitxer "avl.oxt"
             versio = new VersioDiccionari("avl", "Versió AVL", "avl", Marques.totes);
             versio.Extra("%AS_LNG%", "ca-valencia");
             versio.Extra("%AS_LANG%", "ca-valencia");
@@ -135,6 +135,13 @@ namespace Genera
             versio.Extra("%AS_LANGUAGE_CA%", "Català_valencià");
             llista.Add(versio);
 
+            // Cream la versió AVL per a LibreOffice 4.2 o superior, nom del fitxer "ca-valencia.oxt"
+            versio = new VersioDiccionari("ca-valencia", "Versió AVL", "avl", Marques.totes);
+            versio.Extra("%AS_LNG%", "ca-valencia");
+            versio.Extra("%AS_LANG%", "ca-valencia");
+            versio.Extra("%AS_LANGUAGE%", "Catalan_valencia");
+            versio.Extra("%AS_LANGUAGE_CA%", "Català_valencià");
+            llista.Add(versio);
             return llista;
         }
 
